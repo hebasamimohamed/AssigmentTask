@@ -66,9 +66,10 @@
                     app:layout_constraintTop_toBottomOf="@+id/newsTitle" />
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/duration"
+                    android:id="@+id/author"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="@{`By ` + news.author}"
                     app:layout_constraintBottom_toBottomOf="@+id/newsImg"
                     app:layout_constraintStart_toStartOf="@+id/newsTitle" />
 
@@ -76,10 +77,8 @@
                     android:id="@+id/source"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{news.source.name}"
-                    android:visibility="invisible"
-                    app:layout_constraintStart_toEndOf="@+id/duration"
-                    app:layout_constraintTop_toTopOf="@+id/duration" />
+                    app:layout_constraintStart_toStartOf="@+id/author"
+                    app:layout_constraintTop_toBottomOf="@+id/author" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

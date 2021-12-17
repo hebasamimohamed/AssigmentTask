@@ -14,6 +14,8 @@ import com.example.ihtask.utils.Utils.hasInternetConnection
 import kotlinx.coroutines.launch
 import retrofit2.Response
 import java.io.IOException
+import java.text.SimpleDateFormat
+import java.util.*
 
 class NewsViewModel(
     app: Application,
@@ -35,7 +37,9 @@ class NewsViewModel(
         try {
             if (hasInternetConnection(getApplication<MyApplication>())) {
                 val response = appRepository.getLiveNews(
-                    Constants.VERISION, Constants.ARTICLE_DATE, Constants.SORT_BY
+                    Constants.VERISION, SimpleDateFormat(Constants.ARTICLE_DATE, Locale.getDefault()).format(
+                        Date()
+                    ), Constants.SORT_BY
                 )
                 articlesDATA.postValue(handlePicsResponse(response))
             } else {

@@ -45,7 +45,7 @@ class ArticlesAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.itemBinding.news = articlesFiltered!![position]
-        holder.itemBinding.duration.text = BindingUtils.getSourceAndTime(
+        holder.itemBinding.source.text = BindingUtils.getSourceAndTime(
             articles!![position].source.name,
             articles!![position].publishedAt
         )
